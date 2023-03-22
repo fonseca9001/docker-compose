@@ -6,7 +6,7 @@ services:
     image: mcr.microsoft.com/azure-sql-edge:1.0.4
     restart: always
     healthcheck:
-        test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P s4f3_p4ssw0rd -Q 'SELECT 1' || exit 1"]
+        test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P s4f3_p4$$w0rd -Q 'SELECT 1' || exit 1"]
         interval: 10s
         retries: 10
         start_period: 10s
