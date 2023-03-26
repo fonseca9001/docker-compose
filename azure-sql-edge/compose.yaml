@@ -10,13 +10,3 @@ services:
       - "MSSQL_SA_PASSWORD=Your_password123"
     ports:
       - "1433:1433"
-    volumes:
-      - db-data:/var/opt/mssql/data
-      - db-log:/var/opt/mssql/log
-      - db-backup:/var/opt/mssql/backup
-
-volumes:
-  db-data:
-  db-log:
-  db-backup:
-    driver: local
