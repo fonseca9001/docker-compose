@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  debian1:
+    image: debian:stable
+    tty: true
+    hostname: serverboi
+    networks:
+      mynetwork:
+        ipv4_address: 172.16.238.10
+    volumes:
+      - data1:/data
+    environment:
+      - APP_USERNAME=admin
+      - APP_PASSWORD=password
+
+  debian2:
+    image: debian:stable-slim
+    tty: true
+    hostname: clientboi
+    networks:
+      mynetwork:
+        ipv4_address: 172.16.238.11
+    volumes:
+      - data2:/data
+    environment:
+      - APP_USERNAME=admin
+      - APP_PASSWORD=password
+
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+
+volumes:
+  data1:
+  data2:
+
