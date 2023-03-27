@@ -4,7 +4,7 @@ services:
   sqlserver:
     image: mcr.microsoft.com/azure-sql-edge:latest
     container_name: azuresql
-    restart: on-failure
+    restart: no
     environment:
       - "ACCEPT_EULA=1"
       - "MSSQL_SA_PASSWORD=Your_password123"
